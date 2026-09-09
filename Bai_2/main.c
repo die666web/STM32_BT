@@ -64,7 +64,7 @@ int main(void)
             GPIOA->ODR &= ~0xFF;
             GPIOA->ODR |= (1U << i);
 
-            delay(200);
+            delay(100);
         }
 
         for (i = 6; i >= 1; i--)
@@ -72,7 +72,7 @@ int main(void)
             GPIOA->ODR &= ~0xFF;
             GPIOA->ODR |= (1U << i);
 
-            delay(200);
+            delay(100);
         }
     }
 }
