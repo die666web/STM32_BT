@@ -4,3 +4,5 @@
 *.o
 build/
 .vscode/
+Library/
+Project/
