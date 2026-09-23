@@ -69,7 +69,7 @@ void config_UART(void)
     UART1->CR2 = 0U; // ko chọn stopbit 
     UART1->CR3 = 0U; // ko dùng chế độ đặc biệt
     // UART1->BRR = 7500U; // tần số là 72MHz -> Brr = 72M/9600 = 7500;
-    UART1->BRR = 833U;
+    UART1->BRR = 7500U;
     UART1->CR1 = 1<<2| 1<<3 | 1<<13; 
 }
 
@@ -101,25 +101,26 @@ int main(void)
     uint8_t index = 0;
     while(1)
     {
-        
-        uint8_t data_received = receive_UART();
+        sendString_UART("Test");
+        delay(100);
+        // uint8_t data_received = receive_UART();
 
-        if(data_received == '!') 
-        {
-            sendString_UART("DMDTMT02 - Nhom 14: ");
-            sendString_UART(buffer);
+        // if(data_received == '!') 
+        // {
+        //     sendString_UART("DMDTMT02 - Nhom 14: ");
+        //     sendString_UART(buffer);
 
-            for (int i =0; i<64; i++)
-            {
-                buffer[i] = '\0';
-            }
+        //     for (int i =0; i<64; i++)
+        //     {
+        //         buffer[i] = '\0';
+        //     }
             
-            index=0;
-        }
-        else
-        {
-            buffer[index] = data_received;
-            index++;
-        }
+        //     index=0;
+        // }
+        // else
+        // {
+        //     buffer[index] = data_received;
+        //     index++;
+        // }
     }
 }
