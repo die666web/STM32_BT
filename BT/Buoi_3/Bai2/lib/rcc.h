@@ -62,5 +62,5 @@ void RCC_EnableUSART2Clock(void);
 
 void RCC_EnableTIM2Clock(void);
 void RCC_EnableTIM3Clock(void);
-
+void RCC_EnableSPI1Clock(void);
 #endif

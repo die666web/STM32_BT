@@ -52,6 +52,10 @@ void RCC_DisableAPB2Clock(uint32_t peripherals)
 }
 
 /* ================= Hàm tiện dụng ================= */
+void RCC_EnableSPI1Clock(void)
+{
+    RCC->APB2ENR |= (1U << 12);
+}
 
 void RCC_EnableGPIOAClock(void)
 {

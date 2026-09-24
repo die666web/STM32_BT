@@ -1,21 +1,44 @@
-TARGET = firmware
 CC = arm-none-eabi-gcc
-CFLAGS = -mcpu=cortex-m3 -mthumb -Wall -O0 -ffreestanding -nostdlib -fno-builtin \
-         -I../../CMSIS -DSTM32F10X_MD
-LDFLAGS = -T STM32F103C8Tx_FLASH.ld -nostdlib
+OBJCOPY = arm-none-eabi-objcopy
+SIZE = arm-none-eabi-size
 
-SRCS = main.c startup.c
+TARGET = firmware
+
+SRCS = main.c \
+       startup.c \
+
+CFLAGS = -mcpu=cortex-m3 \
+         -mthumb \
+         -Wall \
+         -O0 \
+         -std=c11 \
+         -ffreestanding \
+         -fno-builtin \
+         -ffunction-sections \
+         -fdata-sections \
+         -I../../CMSIS \
+         -DSTM32F10X_MD
+
+LDFLAGS = -T STM32F103C8Tx_FLASH.ld \
+          -nostartfiles \
+          --specs=nano.specs \
+          --specs=nosys.specs \
+          -Wl,--gc-sections \
+          -Wl,-Map=$(TARGET).map
 
 all: $(TARGET).bin
 
 $(TARGET).elf: $(SRCS)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(SRCS) $(LDFLAGS) -o $@
+	$(SIZE) $@
 
 $(TARGET).bin: $(TARGET).elf
-	arm-none-eabi-objcopy -O binary $< $@
+	$(OBJCOPY) -O binary $< $@
 
 flash: $(TARGET).bin
-	st-flash write $(TARGET).bin 0x8000000
+	st-flash write $(TARGET).bin 0x08000000
 
 clean:
-	rm -f *.elf *.bin
+	rm -f $(TARGET).elf $(TARGET).bin $(TARGET).map
+
+.PHONY: all flash clean
