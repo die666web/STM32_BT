@@ -53,17 +53,28 @@ void delay(uint32_t ms)
     }
 }
 
-
 void GPIO_Init(void)
 {
-    RCC->APB2ENR |= 1 << 2;
-    GPIOA->CRL = 0x0F << 16 | 0x0F << 20 | 0x0F << 24;
-    GPIOA->CRL |=
-    (0x3U << 0)
-    | (0x3U << 4)
-    | (0x3U << 8);
+    /* Bật clock GPIOA */
+    RCC->APB2ENR |= (1U << 2);
 
-    // Set PA5 and PA6 as output push-pull
+    /* Xóa 4 bit cấu hình của PA0, PA1, PA2 */
+    GPIOA->CRL &= ~(
+          (0xFU << 0)
+        | (0xFU << 4)
+        | (0xFU << 8)
+    );
+
+    /* PA0, PA1, PA2: output push-pull 50 MHz = 0x3 */
+    GPIOA->CRL |=
+          (0x3U << 0) // 0011 
+        | (0x3U << 4)
+        | (0x3U << 8);
+
+    /* Ban đầu tắt cả ba LED */
+    GPIOA->BRR = (1U << 0) |
+                 (1U << 1) |
+                 (1U << 2);
 }
 
 // delay 1ms using SysTick timer
@@ -89,7 +100,7 @@ int main(void)
     while(1){
         if(systick_counter - led_1_counter >= 50)
         {
-            GPIOA->ODR ^= 1 << 0; // Toggle PA5
+            GPIOA->ODR ^= 1 << 0; // Toggle PA0
             led_1_counter = systick_counter;
         }
         if(systick_counter -led_2_counter >= 500)

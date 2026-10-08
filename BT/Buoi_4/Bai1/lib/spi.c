@@ -65,14 +65,23 @@ uint8_t SPI1_TransferByte(uint8_t data)
     uint8_t received;
 
     /* Chờ TX buffer trống. */
-    while (!(SPI1->SR & (1U << 1)));
+    while (!(SPI1->SR & (1U << 1)))
+    {
+    }
+
     SPI1->DR = data;
 
     /* Chờ nhận xong một byte. */
-    while (!(SPI1->SR & (1U << 0)));
+    while (!(SPI1->SR & (1U << 0)))
+    {
+    }
+
     received = (uint8_t)SPI1->DR;
 
     /* Chờ SPI truyền hoàn toàn. */
-    while (SPI1->SR & (1U << 7));
+    while (SPI1->SR & (1U << 7))
+    {
+    }
+
     return received;
 }

@@ -4,7 +4,7 @@ CFLAGS = -mcpu=cortex-m3 -mthumb -Wall -O0 -ffreestanding -nostdlib -fno-builtin
          -I../../CMSIS -DSTM32F10X_MD
 LDFLAGS = -T STM32F103C8Tx_FLASH.ld -nostdlib
 
-SRCS = main.c startup.c lib/rcc.c lib/gpio.c lib/uart.c lib/timer.c
+SRCS = main.c startup.c 
 
 all: $(TARGET).bin
 

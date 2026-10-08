@@ -148,7 +148,7 @@ void ADC_Init(void)
 
     /*
      * ADCPRE = 00
-     * ADC clock = PCLK2 / 2 = 8 MHz / 2 = 4 MHz.
+     * ADC clock = PCLK2 / 2 = 8 MHz / 2 = 4 MHz. Toois da laf 14MHz cung cap ADC
      */
     RCC->CFGR &= ~(3U << 14);
 
@@ -166,7 +166,7 @@ void ADC_Init(void)
     ADC1->SQR3 = 5U;
 
     /*
-     * EXTSEL = 111: chọn SWSTART.
+     * EXTSEL = 111: chọn SWSTART. -> Co nghia laf kich hoat duoc bagn phan mem 
      * EXTTRIG = 1: cho phép kích hoạt chuyển đổi.
      */
     ADC1->CR2 = (7U << 17) | (1U << 20);
@@ -175,23 +175,15 @@ void ADC_Init(void)
     ADC1->CR2 |= (1U << 0);
 
     /* Chờ ADC ổn định. */
-    for (volatile uint32_t i = 0; i < 1000U; i++)
-    {
-    }
+    for (volatile uint32_t i = 0; i < 1000U; i++) ;
 
     /* Reset calibration. */
     ADC1->CR2 |= (1U << 3);
-
-    while (ADC1->CR2 & (1U << 3))
-    {
-    }
+    while (ADC1->CR2 & (1U << 3));
 
     /* Bắt đầu calibration. */
     ADC1->CR2 |= (1U << 2);
-
-    while (ADC1->CR2 & (1U << 2))
-    {
-    }
+    while (ADC1->CR2 & (1U << 2));
 }
 
 uint16_t ADC_Read(void)
@@ -200,9 +192,7 @@ uint16_t ADC_Read(void)
     ADC1->CR2 |= (1U << 22);
 
     /* Chờ EOC = 1: chuyển đổi hoàn thành. */
-    while (!(ADC1->SR & (1U << 1)))
-    {
-    }
+    while (!(ADC1->SR & (1U << 1)));
 
     /* ADC STM32F103 có độ phân giải 12 bit: 0–4095. */
     return (uint16_t)(ADC1->DR & 0x0FFFU);

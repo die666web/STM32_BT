@@ -1,16 +1,11 @@
 #include <stdint.h>
-#include <string.h>
-#include <stdio.h>
 
-// Học luôn ở đây note ngay phần 
-
-#define RCC_BASE 0x40021000UL
+#define RCC_BASE   0x40021000UL
 #define GPIOA_BASE 0x40010800UL
-#define GPIOB_BASE 0x40010C00UL
 #define UART1_BASE 0x40013800UL
 
-
-typedef struct {
+typedef struct
+{
     volatile uint32_t CR;
     volatile uint32_t CFGR;
     volatile uint32_t CIR;
@@ -23,7 +18,8 @@ typedef struct {
     volatile uint32_t CSR;
 } RCC_Typedef;
 
-typedef struct {
+typedef struct
+{
     volatile uint32_t CRL;
     volatile uint32_t CRH;
     volatile uint32_t IDR;
@@ -33,9 +29,10 @@ typedef struct {
     volatile uint32_t LCKR;
 } GPIO_Typedef;
 
-typedef struct {
+typedef struct
+{
     volatile uint32_t SR;
-    volatile uint8_t DR;
+    volatile uint32_t DR;
     volatile uint32_t BRR;
     volatile uint32_t CR1;
     volatile uint32_t CR2;
@@ -43,84 +40,94 @@ typedef struct {
     volatile uint32_t GTPR;
 } UART1_Typedef;
 
-#define RCC ((RCC_Typedef *)RCC_BASE)
+#define RCC   ((RCC_Typedef *)RCC_BASE)
 #define GPIOA ((GPIO_Typedef *)GPIOA_BASE)
 #define UART1 ((UART1_Typedef *)UART1_BASE)
 
-void delay(uint16_t t)
+void delay(uint16_t time)
 {
-    for(int i = 0; i < t; i++)
-    {
-        for(int j = 0; j < 1000; j++)
-        {
+    volatile uint32_t i;
+    volatile uint32_t j;
 
-        }
-    }
+    for (i = 0; i < time; i++)
+        for (j = 0; j < 1000U; j++);
 }
 
-void config_UART(void)
+void Config_UART(void)
 {
-   // Cấp xung clock cho GPIOA và uart 1
-    RCC->APB2ENR |= 1U << 2 | 1U << 14;
+    RCC->APB2ENR |= (1U << 2) | (1U << 14);
 
+    /* PA9 TX: AF push-pull; PA10 RX: input floating */
     GPIOA->CRH &= ~((0xFU << 4) | (0xFU << 8));
-    GPIOA->CRH |= (0xBU << 4) | (0x8U << 8);
+    GPIOA->CRH |=  (0xBU << 4) | (0x4U << 8);
 
-    UART1->CR2 = 0U; // ko chọn stopbit 
-    UART1->CR3 = 0U; // ko dùng chế độ đặc biệt
-    // UART1->BRR = 7500U; // tần số là 72MHz -> Brr = 72M/9600 = 7500;
-    UART1->BRR = 7500U;
-    UART1->CR1 = 1<<2| 1<<3 | 1<<13; 
+    UART1->CR2 = 0U;
+    UART1->CR3 = 0U;
+
+    /* Clock mặc định 8 MHz, baud 9600 */
+    UART1->BRR = 833U;
+
+    /* RE, TE, UE */
+    UART1->CR1 = (1U << 2) |
+                 (1U << 3) |
+                 (1U << 13);
 }
 
-void send_UART(uint8_t byte)
+void Send_UART(uint8_t data)
 {
-    while((UART1->SR & (1U << 6)) == 0){} 
-    UART1->DR = byte;
+    while ((UART1->SR & (1U << 7)) == 0U);
+    UART1->DR = data;
 }
 
-void sendString_UART(const char *s)
+void SendString_UART(const char *text)
 {
-    while(*s)
-    {
-        send_UART((uint8_t)*s++);
-    }
+    while (*text)
+        Send_UART((uint8_t)*text++);
 }
 
-uint8_t receive_UART(void)
+uint8_t Receive_UART(void)
 {
-    while((UART1->SR & (1U << 5)) == 0){} // Tuong tu: nhung doi voi nhan RXNE laf vi tri bit thu 5
-    uint8_t data = (uint8_t)(UART1->DR);
-    return data;
+    /* Chờ RXNE = 1, nghĩa là đã nhận được một byte. */
+    while ((UART1->SR & (1U << 5)) == 0U);
+
+    return (uint8_t)UART1->DR;
 }
 
 int main(void)
 {
-    config_UART();
     char buffer[64];
     uint8_t index = 0;
-    while(1)
+
+    Config_UART();
+
+    buffer[0] = '\0';
+
+    while (1)
     {
-        sendString_UART("Test");
-        delay(100);
-        // uint8_t data_received = receive_UART();
+        uint8_t data_received = Receive_UART();
 
-        // if(data_received == '!') 
-        // {
-        //     sendString_UART("DMDTMT02 - Nhom 14: ");
-        //     sendString_UART(buffer);
+        if (data_received == '!')
+        {
+            buffer[index] = '\0';
 
-        //     for (int i =0; i<64; i++)
-        //     {
-        //         buffer[i] = '\0';
-        //     }
-            
-        //     index=0;
-        // }
-        // else
-        // {
-        //     buffer[index] = data_received;
-        //     index++;
-        // }
+            SendString_UART("DMDTMT02 - Nhom 14: ");
+            SendString_UART(buffer);
+            SendString_UART("\r\n");
+
+            for (uint8_t i = 0; i < 64; i++)
+            {
+                buffer[i] = '\0';
+            }
+
+            index = 0;
+        }
+        else 
+        {
+            buffer[index] = (char)data_received;
+            index++;
+
+            /* Luôn kết thúc chuỗi. */
+            buffer[index] = '\0';
+        }
     }
 }

@@ -58,7 +58,7 @@ int main(void)
 
     old_state = GPIO_ReadPin(GPIOA, PIN_BUTTON);
 
-    while (1)
+    while (1) 
     {
         new_state = GPIO_ReadPin(GPIOA, PIN_BUTTON);
 

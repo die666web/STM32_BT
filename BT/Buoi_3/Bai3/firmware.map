@@ -1,7 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
-                              /tmp/cctWCZa9.o (snprintf)
+                              /tmp/ccoDCOfh.o (snprintf)
 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-impure.o)
                               /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o) (_impure_ptr)
 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
@@ -33,74 +33,74 @@ Archive member included to satisfy reference by file (symbol)
 
 Discarded input sections
 
- .text          0x00000000        0x0 /tmp/cctWCZa9.o
- .data          0x00000000        0x0 /tmp/cctWCZa9.o
- .bss           0x00000000        0x0 /tmp/cctWCZa9.o
- .text          0x00000000        0x0 /tmp/ccqhCrGZ.o
- .data          0x00000000        0x0 /tmp/ccqhCrGZ.o
- .bss           0x00000000        0x0 /tmp/ccqhCrGZ.o
- .text          0x00000000        0x0 /tmp/ccA3EA7n.o
- .data          0x00000000        0x0 /tmp/ccA3EA7n.o
- .bss           0x00000000        0x0 /tmp/ccA3EA7n.o
+ .text          0x00000000        0x0 /tmp/ccoDCOfh.o
+ .data          0x00000000        0x0 /tmp/ccoDCOfh.o
+ .bss           0x00000000        0x0 /tmp/ccoDCOfh.o
+ .text          0x00000000        0x0 /tmp/ccdP63BA.o
+ .data          0x00000000        0x0 /tmp/ccdP63BA.o
+ .bss           0x00000000        0x0 /tmp/ccdP63BA.o
+ .text          0x00000000        0x0 /tmp/ccbHsNwp.o
+ .data          0x00000000        0x0 /tmp/ccbHsNwp.o
+ .bss           0x00000000        0x0 /tmp/ccbHsNwp.o
  .text.RCC_EnableAPB1Clock
-                0x00000000       0x24 /tmp/ccA3EA7n.o
+                0x00000000       0x24 /tmp/ccbHsNwp.o
  .text.RCC_DisableAHBClock
-                0x00000000       0x24 /tmp/ccA3EA7n.o
+                0x00000000       0x24 /tmp/ccbHsNwp.o
  .text.RCC_DisableAPB1Clock
-                0x00000000       0x24 /tmp/ccA3EA7n.o
+                0x00000000       0x24 /tmp/ccbHsNwp.o
  .text.RCC_DisableAPB2Clock
-                0x00000000       0x24 /tmp/ccA3EA7n.o
+                0x00000000       0x24 /tmp/ccbHsNwp.o
  .text.RCC_EnableGPIOBClock
-                0x00000000        0xe /tmp/ccA3EA7n.o
+                0x00000000        0xe /tmp/ccbHsNwp.o
  .text.RCC_EnableGPIOCClock
-                0x00000000        0xe /tmp/ccA3EA7n.o
+                0x00000000        0xe /tmp/ccbHsNwp.o
  .text.RCC_EnableUSART2Clock
-                0x00000000       0x10 /tmp/ccA3EA7n.o
+                0x00000000       0x10 /tmp/ccbHsNwp.o
  .text.RCC_EnableTIM2Clock
-                0x00000000        0xe /tmp/ccA3EA7n.o
+                0x00000000        0xe /tmp/ccbHsNwp.o
  .text.RCC_EnableTIM3Clock
-                0x00000000        0xe /tmp/ccA3EA7n.o
- .text          0x00000000        0x0 /tmp/ccca7V5k.o
- .data          0x00000000        0x0 /tmp/ccca7V5k.o
- .bss           0x00000000        0x0 /tmp/ccca7V5k.o
+                0x00000000        0xe /tmp/ccbHsNwp.o
+ .text          0x00000000        0x0 /tmp/ccdWGJJ1.o
+ .data          0x00000000        0x0 /tmp/ccdWGJJ1.o
+ .bss           0x00000000        0x0 /tmp/ccdWGJJ1.o
  .text.GPIO_WritePin
-                0x00000000       0x44 /tmp/ccca7V5k.o
- .text          0x00000000        0x0 /tmp/ccWW0eKw.o
- .data          0x00000000        0x0 /tmp/ccWW0eKw.o
- .bss           0x00000000        0x0 /tmp/ccWW0eKw.o
+                0x00000000       0x44 /tmp/ccdWGJJ1.o
+ .text          0x00000000        0x0 /tmp/ccmQCJ5L.o
+ .data          0x00000000        0x0 /tmp/ccmQCJ5L.o
+ .bss           0x00000000        0x0 /tmp/ccmQCJ5L.o
  .bss.line_index
-                0x00000000        0x1 /tmp/ccWW0eKw.o
+                0x00000000        0x1 /tmp/ccmQCJ5L.o
  .text.SendInterrupt_UART
-                0x00000000       0x64 /tmp/ccWW0eKw.o
+                0x00000000       0x64 /tmp/ccmQCJ5L.o
  .text.SendStringInterrupt_UART
-                0x00000000       0x42 /tmp/ccWW0eKw.o
+                0x00000000       0x42 /tmp/ccmQCJ5L.o
  .text.ReceiveInterrupt_UART
-                0x00000000       0x58 /tmp/ccWW0eKw.o
+                0x00000000       0x58 /tmp/ccmQCJ5L.o
  .text.UART_ReadLine
-                0x00000000       0x90 /tmp/ccWW0eKw.o
+                0x00000000       0x90 /tmp/ccmQCJ5L.o
  .text.StringEqual
-                0x00000000       0x5a /tmp/ccWW0eKw.o
+                0x00000000       0x5a /tmp/ccmQCJ5L.o
  .text.SendNumberInterrupt_UART
-                0x00000000       0xac /tmp/ccWW0eKw.o
+                0x00000000       0xac /tmp/ccmQCJ5L.o
  .text.SendTextInterrupt_UART
-                0x00000000       0x34 /tmp/ccWW0eKw.o
- .text          0x00000000        0x0 /tmp/ccpZthHt.o
- .data          0x00000000        0x0 /tmp/ccpZthHt.o
- .bss           0x00000000        0x0 /tmp/ccpZthHt.o
+                0x00000000       0x34 /tmp/ccmQCJ5L.o
+ .text          0x00000000        0x0 /tmp/ccoorEBu.o
+ .data          0x00000000        0x0 /tmp/ccoorEBu.o
+ .bss           0x00000000        0x0 /tmp/ccoorEBu.o
  .text.DMA_Stop
-                0x00000000       0x1e /tmp/ccpZthHt.o
+                0x00000000       0x1e /tmp/ccoorEBu.o
  .text.DMA_IsHalfTransfer
-                0x00000000       0x48 /tmp/ccpZthHt.o
+                0x00000000       0x48 /tmp/ccoorEBu.o
  .text.DMA_IsFullTransfer
-                0x00000000       0x48 /tmp/ccpZthHt.o
+                0x00000000       0x48 /tmp/ccoorEBu.o
  .text.DMA_IsErrorTransfer
-                0x00000000       0x48 /tmp/ccpZthHt.o
+                0x00000000       0x48 /tmp/ccoorEBu.o
  .text.DMA_ClearFlagHalfTransfer
-                0x00000000       0x38 /tmp/ccpZthHt.o
+                0x00000000       0x38 /tmp/ccoorEBu.o
  .text.DMA_ClearFlagFullTransfer
-                0x00000000       0x38 /tmp/ccpZthHt.o
+                0x00000000       0x38 /tmp/ccoorEBu.o
  .text.DMA_ClearFlagError
-                0x00000000       0x38 /tmp/ccpZthHt.o
+                0x00000000       0x38 /tmp/ccoorEBu.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
  .text          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-impure.o)
@@ -140,12 +140,12 @@ RAM              0x20000000         0x00005000         xrw
 
 Linker script and memory map
 
-LOAD /tmp/cctWCZa9.o
-LOAD /tmp/ccqhCrGZ.o
-LOAD /tmp/ccA3EA7n.o
-LOAD /tmp/ccca7V5k.o
-LOAD /tmp/ccWW0eKw.o
-LOAD /tmp/ccpZthHt.o
+LOAD /tmp/ccoDCOfh.o
+LOAD /tmp/ccdP63BA.o
+LOAD /tmp/ccbHsNwp.o
+LOAD /tmp/ccdWGJJ1.o
+LOAD /tmp/ccmQCJ5L.o
+LOAD /tmp/ccoorEBu.o
 START GROUP
 LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
 LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
@@ -167,7 +167,7 @@ END GROUP
 .isr_vector     0x08000000       0xec
                 0x08000000                        . = ALIGN (0x4)
  *(.isr_vector)
- .isr_vector    0x08000000       0xec /tmp/ccqhCrGZ.o
+ .isr_vector    0x08000000       0xec /tmp/ccdP63BA.o
                 0x08000000                vector_table
                 0x080000ec                        . = ALIGN (0x4)
 
@@ -209,16 +209,16 @@ END GROUP
  .text          0x08000ee8       0x1c /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
                 0x08000ee8                _sbrk
  *(.text*)
- .text.delay    0x08000f04       0x3e /tmp/cctWCZa9.o
+ .text.delay    0x08000f04       0x3e /tmp/ccoDCOfh.o
                 0x08000f04                delay
  *fill*         0x08000f42        0x2 
- .text.main     0x08000f44       0xc4 /tmp/cctWCZa9.o
+ .text.main     0x08000f44       0xc4 /tmp/ccoDCOfh.o
                 0x08000f44                main
  .text.Reset_Handler
-                0x08001008       0x5c /tmp/ccqhCrGZ.o
+                0x08001008       0x5c /tmp/ccdP63BA.o
                 0x08001008                Reset_Handler
  .text.Default_Handler
-                0x08001064        0x8 /tmp/ccqhCrGZ.o
+                0x08001064        0x8 /tmp/ccdP63BA.o
                 0x08001064                EXTI2_IRQHandler
                 0x08001064                DebugMon_Handler
                 0x08001064                TIM1_CC_IRQHandler
@@ -272,46 +272,46 @@ END GROUP
                 0x08001064                I2C1_ER_IRQHandler
                 0x08001064                USBWakeUp_IRQHandler
  .text.RCC_EnableAHBClock
-                0x0800106c       0x24 /tmp/ccA3EA7n.o
+                0x0800106c       0x24 /tmp/ccbHsNwp.o
                 0x0800106c                RCC_EnableAHBClock
  .text.RCC_EnableAPB2Clock
-                0x08001090       0x24 /tmp/ccA3EA7n.o
+                0x08001090       0x24 /tmp/ccbHsNwp.o
                 0x08001090                RCC_EnableAPB2Clock
  .text.RCC_EnableGPIOAClock
-                0x080010b4        0xe /tmp/ccA3EA7n.o
+                0x080010b4        0xe /tmp/ccbHsNwp.o
                 0x080010b4                RCC_EnableGPIOAClock
  .text.RCC_EnableUSART1Clock
-                0x080010c2       0x10 /tmp/ccA3EA7n.o
+                0x080010c2       0x10 /tmp/ccbHsNwp.o
                 0x080010c2                RCC_EnableUSART1Clock
  *fill*         0x080010d2        0x2 
  .text.GPIO_ConfigPin
-                0x080010d4      0x104 /tmp/ccca7V5k.o
+                0x080010d4      0x104 /tmp/ccdWGJJ1.o
                 0x080010d4                GPIO_ConfigPin
  .text.GPIO_ReadPin
-                0x080011d8       0x38 /tmp/ccca7V5k.o
+                0x080011d8       0x38 /tmp/ccdWGJJ1.o
                 0x080011d8                GPIO_ReadPin
  .text.UART_NextIndex
-                0x08001210       0x28 /tmp/ccWW0eKw.o
+                0x08001210       0x28 /tmp/ccmQCJ5L.o
  .text.Config_uart
-                0x08001238       0x54 /tmp/ccWW0eKw.o
+                0x08001238       0x54 /tmp/ccmQCJ5L.o
                 0x08001238                Config_uart
  .text.USART1_IRQHandler
-                0x0800128c       0xe4 /tmp/ccWW0eKw.o
+                0x0800128c       0xe4 /tmp/ccmQCJ5L.o
                 0x0800128c                USART1_IRQHandler
  .text.DMA_Init
-                0x08001370       0x8c /tmp/ccpZthHt.o
+                0x08001370       0x8c /tmp/ccoorEBu.o
                 0x08001370                DMA_Init
  .text.DMA_Start
-                0x080013fc       0x44 /tmp/ccpZthHt.o
+                0x080013fc       0x44 /tmp/ccoorEBu.o
                 0x080013fc                DMA_Start
  .text.DMA_ClearAllFlag
-                0x08001440       0x38 /tmp/ccpZthHt.o
+                0x08001440       0x38 /tmp/ccoorEBu.o
                 0x08001440                DMA_ClearAllFlag
  .text.DMA_GetRemainingData
-                0x08001478       0x18 /tmp/ccpZthHt.o
+                0x08001478       0x18 /tmp/ccoorEBu.o
                 0x08001478                DMA_GetRemainingData
  *(.rodata)
- .rodata        0x08001490       0x2b /tmp/cctWCZa9.o
+ .rodata        0x08001490       0x2b /tmp/ccoDCOfh.o
  *(.rodata*)
  *fill*         0x080014bb        0x1 
  .rodata.str1.4
@@ -339,7 +339,7 @@ END GROUP
  .v4_bx         0x080014f8        0x0 linker stubs
 
 .iplt           0x080014f8        0x0
- .iplt          0x080014f8        0x0 /tmp/cctWCZa9.o
+ .iplt          0x080014f8        0x0 /tmp/ccoDCOfh.o
 
 .ARM.extab
  *(.ARM.extab*)
@@ -353,7 +353,7 @@ END GROUP
                 0x08001500                        __exidx_end = .
 
 .rel.dyn        0x08001500        0x0
- .rel.iplt      0x08001500        0x0 /tmp/cctWCZa9.o
+ .rel.iplt      0x08001500        0x0 /tmp/ccoDCOfh.o
 
 .preinit_array  0x08001500        0x0
                 [!provide]                        PROVIDE (__preinit_array_start = .)
@@ -385,7 +385,7 @@ END GROUP
                 0x20000050                        _edata = .
 
 .igot.plt       0x20000050        0x0 load address 0x08001550
- .igot.plt      0x20000050        0x0 /tmp/cctWCZa9.o
+ .igot.plt      0x20000050        0x0 /tmp/ccoDCOfh.o
 
 .bss            0x20000050      0x138 load address 0x08001550
                 0x20000050                        . = ALIGN (0x4)
@@ -398,16 +398,16 @@ END GROUP
                 0x20000058                errno
  .bss           0x2000005c        0x4 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
  *(.bss*)
- .bss.message   0x20000060       0x20 /tmp/cctWCZa9.o
+ .bss.message   0x20000060       0x20 /tmp/ccoDCOfh.o
  .bss.rx_buffer
-                0x20000080       0x80 /tmp/ccWW0eKw.o
- .bss.rx_head   0x20000100        0x1 /tmp/ccWW0eKw.o
- .bss.rx_tail   0x20000101        0x1 /tmp/ccWW0eKw.o
+                0x20000080       0x80 /tmp/ccmQCJ5L.o
+ .bss.rx_head   0x20000100        0x1 /tmp/ccmQCJ5L.o
+ .bss.rx_tail   0x20000101        0x1 /tmp/ccmQCJ5L.o
  *fill*         0x20000102        0x2 
  .bss.tx_buffer
-                0x20000104       0x80 /tmp/ccWW0eKw.o
- .bss.tx_head   0x20000184        0x1 /tmp/ccWW0eKw.o
- .bss.tx_tail   0x20000185        0x1 /tmp/ccWW0eKw.o
+                0x20000104       0x80 /tmp/ccmQCJ5L.o
+ .bss.tx_head   0x20000184        0x1 /tmp/ccmQCJ5L.o
+ .bss.tx_tail   0x20000185        0x1 /tmp/ccmQCJ5L.o
  *(COMMON)
                 0x20000188                        . = ALIGN (0x4)
  *fill*         0x20000186        0x2 
@@ -431,17 +431,17 @@ OUTPUT(firmware.elf elf32-littlearm)
 LOAD linker stubs
 
 .comment        0x00000000       0x26
- .comment       0x00000000       0x26 /tmp/cctWCZa9.o
+ .comment       0x00000000       0x26 /tmp/ccoDCOfh.o
                                  0x27 (size before relaxing)
- .comment       0x00000026        0x0 /tmp/ccqhCrGZ.o
+ .comment       0x00000026        0x0 /tmp/ccdP63BA.o
                                  0x27 (size before relaxing)
- .comment       0x00000026        0x0 /tmp/ccA3EA7n.o
+ .comment       0x00000026        0x0 /tmp/ccbHsNwp.o
                                  0x27 (size before relaxing)
- .comment       0x00000026        0x0 /tmp/ccca7V5k.o
+ .comment       0x00000026        0x0 /tmp/ccdWGJJ1.o
                                  0x27 (size before relaxing)
- .comment       0x00000026        0x0 /tmp/ccWW0eKw.o
+ .comment       0x00000026        0x0 /tmp/ccmQCJ5L.o
                                  0x27 (size before relaxing)
- .comment       0x00000026        0x0 /tmp/ccpZthHt.o
+ .comment       0x00000026        0x0 /tmp/ccoorEBu.o
                                  0x27 (size before relaxing)
  .comment       0x00000026        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
                                  0x27 (size before relaxing)
@@ -475,17 +475,17 @@ LOAD linker stubs
 .ARM.attributes
                 0x00000000       0x2b
  .ARM.attributes
-                0x00000000       0x2d /tmp/cctWCZa9.o
+                0x00000000       0x2d /tmp/ccoDCOfh.o
  .ARM.attributes
-                0x0000002d       0x2d /tmp/ccqhCrGZ.o
+                0x0000002d       0x2d /tmp/ccdP63BA.o
  .ARM.attributes
-                0x0000005a       0x2d /tmp/ccA3EA7n.o
+                0x0000005a       0x2d /tmp/ccbHsNwp.o
  .ARM.attributes
-                0x00000087       0x2d /tmp/ccca7V5k.o
+                0x00000087       0x2d /tmp/ccdWGJJ1.o
  .ARM.attributes
-                0x000000b4       0x2d /tmp/ccWW0eKw.o
+                0x000000b4       0x2d /tmp/ccmQCJ5L.o
  .ARM.attributes
-                0x000000e1       0x2d /tmp/ccpZthHt.o
+                0x000000e1       0x2d /tmp/ccoorEBu.o
  .ARM.attributes
                 0x0000010e       0x2d /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
  .ARM.attributes
