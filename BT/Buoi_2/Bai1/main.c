@@ -101,6 +101,7 @@ int main(void)
     Config_UART();
 
     buffer[0] = '\0';
+    SendString_UART("DMDTMT02 - Nhom 14: ");
 
     while (1)
     {

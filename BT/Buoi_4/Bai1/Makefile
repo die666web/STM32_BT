@@ -5,23 +5,28 @@ SIZE = arm-none-eabi-size
 TARGET = firmware
 LDSCRIPT = STM32F103C8Tx_FLASH.ld
 
-FREERTOS_DIR = FreeRTOS-Kernel
-PORT_DIR = $(FREERTOS_DIR)/portable/GCC/ARM_CM3
+FREERTOS = FreeRTOS-Kernel
+PORT = $(FREERTOS)/portable/GCC/ARM_CM3
 
 SRCS = main.c \
        startup.c \
-       $(FREERTOS_DIR)/tasks.c \
-       $(FREERTOS_DIR)/list.c \
-       $(FREERTOS_DIR)/queue.c \
-       $(PORT_DIR)/port.c \
-       $(FREERTOS_DIR)/portable/MemMang/heap_4.c
+       $(wildcard lib/*.c) \
+       $(FREERTOS)/tasks.c \
+       $(FREERTOS)/list.c \
+       $(FREERTOS)/queue.c \
+       $(FREERTOS)/timers.c \
+       $(FREERTOS)/event_groups.c \
+       $(FREERTOS)/stream_buffer.c \
+       $(PORT)/port.c \
+       $(FREERTOS)/portable/MemMang/heap_4.c
 
-HEADERS = FreeRTOSConfig.h \
-          $(wildcard $(FREERTOS_DIR)/include/*.h) \
-          $(wildcard $(PORT_DIR)/*.h)
+HEADERS = $(wildcard *.h lib/*.h) \
+          $(wildcard $(FREERTOS)/include/*.h) \
+          $(wildcard $(PORT)/*.h)
 
 CFLAGS = -mcpu=cortex-m3 \
          -mthumb \
+         -mfloat-abi=soft \
          -Wall \
          -Wextra \
          -O0 \
@@ -32,17 +37,21 @@ CFLAGS = -mcpu=cortex-m3 \
          -ffunction-sections \
          -fdata-sections \
          -I. \
+         -Ilib \
          -I../../CMSIS \
-         -I$(FREERTOS_DIR)/include \
-         -I$(PORT_DIR) \
+         -I$(FREERTOS)/include \
+         -I$(PORT) \
          -DSTM32F10X_MD
 
-LDFLAGS = -T $(LDSCRIPT) \
+LDFLAGS = -T$(LDSCRIPT) \
           -nostartfiles \
           --specs=nano.specs \
           --specs=nosys.specs \
           -Wl,--gc-sections \
           -Wl,-Map=$(TARGET).map
+
+.DEFAULT_GOAL := all
+.DELETE_ON_ERROR:
 
 all: $(TARGET).bin
 

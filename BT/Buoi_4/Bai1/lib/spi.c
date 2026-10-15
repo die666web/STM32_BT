@@ -24,7 +24,7 @@ typedef struct
 void SPI1_Init(void)
 {
     RCC_EnableGPIOAClock();
-    RCC_EnableSPI1Clock();
+    RCC_EnableAPB2Clock(RCC_APB2_SPI1);
 
     /* PA5: SPI1 SCK, Alternate Function Push-Pull. */
     GPIO_ConfigPin(
